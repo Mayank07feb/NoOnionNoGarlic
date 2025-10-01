@@ -4,7 +4,7 @@ const expressLayouts = require('express-ejs-layouts');
 const seoData = require('./seoData'); // centralized meta data
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // <-- Use Render's assigned port
 
 // EJS setup
 app.set('view engine', 'ejs');
@@ -103,4 +103,4 @@ app.use((req, res) =>
 );
 
 // Start server
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
