@@ -1,0 +1,112 @@
+<section class="min-h-screen md:ml-64 pt-16 md:pt-6 px-4 font-open-sans">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Page Header -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+      <h1 class="text-h2 md:text-h1 font-montserrat font-bold text-gray-900 mb-4 md:mb-0">Welcome Back, John!</h1>
+      <p class="text-gray-600 text-base md:text-lg">Track your orders and manage products.</p>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <!-- Orders Placed -->
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl hover:scale-15 transition-transform duration-300">
+        <div class="flex items-center justify-between">
+          <span class="material-icons text-primary text-4xl">shopping_cart</span>
+          <p class="text-gray-500 text-sm">Orders Placed</p>
+        </div>
+        <h2 class="mt-4 text-3xl font-bold text-gray-900">28</h2>
+      </div>
+
+      <!-- Products Sold -->
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl hover:scale-105 transition-transform duration-300">
+        <div class="flex items-center justify-between">
+          <span class="material-icons text-secondary text-4xl">inventory_2</span>
+          <p class="text-gray-500 text-sm">Products Sold</p>
+        </div>
+        <h2 class="mt-4 text-3xl font-bold text-gray-900">120</h2>
+      </div>
+
+      <!-- Pending Orders -->
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl hover:scale-105 transition-transform duration-300">
+        <div class="flex items-center justify-between">
+          <span class="material-icons text-purple-500 text-4xl">pending_actions</span>
+          <p class="text-gray-500 text-sm">Pending Orders</p>
+        </div>
+        <h2 class="mt-4 text-3xl font-bold text-gray-900">5</h2>
+      </div>
+
+      <!-- Delivered Orders -->
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl hover:scale-105 transition-transform duration-300">
+        <div class="flex items-center justify-between">
+          <span class="material-icons text-yellow-500 text-4xl">check_circle</span>
+          <p class="text-gray-500 text-sm">Delivered Orders</p>
+        </div>
+        <h2 class="mt-4 text-3xl font-bold text-gray-900">23</h2>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="bg-white p-6 rounded-2xl shadow mb-8">
+      <h2 class="text-h4 font-montserrat font-bold text-gray-900 mb-4">Quick Actions</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="/orders" class="flex items-center gap-2 p-4 bg-primary/10 hover:bg-primary/20 rounded-xl transition">
+          <span class="material-icons text-primary">shopping_cart</span> View Orders
+        </a>
+        <a href="/products"
+          class="flex items-center gap-2 p-4 bg-secondary/10 hover:bg-secondary/20 rounded-xl transition">
+          <span class="material-icons text-secondary">inventory_2</span> Manage Products
+        </a>
+        <a href="/pending-orders"
+          class="flex items-center gap-2 p-4 bg-purple-50 hover:bg-purple-100 rounded-xl transition">
+          <span class="material-icons text-purple-500">pending_actions</span> Pending Orders
+        </a>
+        <a href="/analytics" class="flex items-center gap-2 p-4 bg-yellow-50 hover:bg-yellow-100 rounded-xl transition">
+          <span class="material-icons text-yellow-500">bar_chart</span> Sales Analytics
+        </a>
+      </div>
+    </div>
+
+    <!-- Recent Orders & Top Products -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Recent Orders -->
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h2 class="text-h5 font-montserrat font-bold text-gray-900 mb-4">Recent Orders</h2>
+        <ul class="divide-y divide-gray-200">
+          <li class="py-2 flex justify-between">
+            <span>Noodles - Order #1023</span>
+            <span class="text-gray-500">Delivered</span>
+          </li>
+          <li class="py-2 flex justify-between">
+            <span>Snacks - Order #1024</span>
+            <span class="text-gray-500">Pending</span>
+          </li>
+          <li class="py-2 flex justify-between">
+            <span>Beverages - Order #1025</span>
+            <span class="text-gray-500">Shipped</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Top Products -->
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h2 class="text-h5 font-montserrat font-bold text-gray-900 mb-4">Top Products</h2>
+        <ul class="divide-y divide-gray-200">
+          <li class="py-2 flex justify-between">
+            <span>Noodles</span>
+            <span class="text-gray-500">120 Sold</span>
+          </li>
+          <li class="py-2 flex justify-between">
+            <span>Snacks</span>
+            <span class="text-gray-500">95 Sold</span>
+          </li>
+          <li class="py-2 flex justify-between">
+            <span>Beverages</span>
+            <span class="text-gray-500">80 Sold</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,413 @@
+<style>
+  .slide {
+    display: none;
+  }
+
+  .slide.active {
+    display: block;
+  }
+
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+</style>
+
+<div class="slider-container">
+  <!-- Slide 1 -->
+  <div class="slide active relative h-screen bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&h=900&fit=crop');">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center px-4 max-w-5xl w-full">
+        <h1 class="text-white font-montserrat text-h1 md:text-h2 lg:text-h1 font-bold mb-8">
+          Find Your Favourite No Onion No Garlic Recipes
+        </h1>
+
+        <div class="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-2xl">
+          <div class="flex flex-col md:flex-row gap-4 items-center">
+            <div class="relative w-full md:w-48">
+              <select
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary appearance-none bg-white font-open-sans text-base">
+                <option>ALL</option>
+                <option>Breakfast</option>
+                <option>Lunch</option>
+                <option>Dinner</option>
+                <option>Snacks</option>
+                <option>Desserts</option>
+              </select>
+              <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-600 pointer-events-none"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+
+            <input type="text" placeholder="Search for recipes, products, etc."
+              class="flex-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary font-open-sans text-base">
+
+            <button
+              class="w-full md:w-auto bg-secondary hover:bg-secondary-hover text-gray-900 font-semibold px-8 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide relative h-screen bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1600&h=900&fit=crop');">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center px-4 max-w-5xl w-full">
+        <h1 class="text-white font-montserrat text-h1 md:text-h2 lg:text-h1 font-bold mb-8">
+          Find Your Favourite No Onion No Garlic Recipes
+        </h1>
+
+        <div class="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-2xl">
+          <div class="flex flex-col md:flex-row gap-4 items-center">
+            <div class="relative w-full md:w-48">
+              <select
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary appearance-none bg-white font-open-sans text-base">
+                <option>ALL</option>
+                <option>Breakfast</option>
+                <option>Lunch</option>
+                <option>Dinner</option>
+                <option>Snacks</option>
+                <option>Desserts</option>
+              </select>
+              <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-600 pointer-events-none"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+
+            <input type="text" placeholder="Search for recipes, products, etc."
+              class="flex-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary font-open-sans text-base">
+
+            <button
+              class="w-full md:w-auto bg-secondary hover:bg-secondary-hover text-gray-900 font-semibold px-8 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide relative h-screen bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=1600&h=900&fit=crop');">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center px-4 max-w-5xl w-full">
+        <h1 class="text-white font-montserrat text-h1 md:text-h2 lg:text-h1 font-bold mb-8">
+          Find Your Favourite No Onion No Garlic Recipes
+        </h1>
+
+        <div class="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-2xl">
+          <div class="flex flex-col md:flex-row gap-4 items-center">
+            <div class="relative w-full md:w-48">
+              <select
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary appearance-none bg-white font-open-sans text-base">
+                <option>ALL</option>
+                <option>Breakfast</option>
+                <option>Lunch</option>
+                <option>Dinner</option>
+                <option>Snacks</option>
+                <option>Desserts</option>
+              </select>
+              <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-600 pointer-events-none"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+
+            <input type="text" placeholder="Search for recipes, products, etc."
+              class="flex-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary font-open-sans text-base">
+
+            <button
+              class="w-full md:w-auto bg-secondary hover:bg-secondary-hover text-gray-900 font-semibold px-8 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Arrows -->
+  <button onclick="changeSlide(-1)"
+    class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full transition-all backdrop-blur-sm">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+    </svg>
+  </button>
+
+  <button onclick="changeSlide(1)"
+    class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full transition-all backdrop-blur-sm">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </button>
+
+  <!-- Slide Indicators -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3">
+    <button onclick="goToSlide(0)" class="indicator w-3 h-3 rounded-full bg-primary transition-all"></button>
+    <button onclick="goToSlide(1)"
+      class="indicator w-3 h-3 rounded-full bg-primary bg-opacity-50 transition-all"></button>
+    <button onclick="goToSlide(2)"
+      class="indicator w-3 h-3 rounded-full bg-primary bg-opacity-50 transition-all"></button>
+  </div>
+</div>
+
+<!-- Categories Section -->
+<section class="container mx-auto px-10 py-16">
+  <h2 class="text-h2 font-montserrat font-bold text-center text-primary mb-12">
+    No Onion No Garlic – Explore by Category
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Noodles -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop" alt="Noodles"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Noodles</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Sauces -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=400&h=300&fit=crop" alt="Sauces"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Sauces</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Masala -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=400&h=300&fit=crop" alt="Masala"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Masala</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Namkeens -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=400&h=300&fit=crop" alt="Namkeens"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Namkeens</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Ready to Eat -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop" alt="Ready to Eat"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Ready to Eat</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Chips -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400&h=300&fit=crop" alt="Chips"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Chips</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Frozen Food -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1609501676725-7186f017a4b7?w=400&h=300&fit=crop" alt="Frozen Food"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Frozen Food</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Snacks -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=400&h=300&fit=crop" alt="Snacks"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Snacks</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Appetizers -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?w=400&h=300&fit=crop" alt="Appetizers"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Appetizers</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Course -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=300&fit=crop" alt="Main Course"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Main Course</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Soups & Salad -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop" alt="Soups & Salad"
+        class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Soups & Salad</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- Breakfast & Brunch -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=400&h=300&fit=crop"
+        alt="Breakfast & Brunch" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-h5 font-montserrat font-semibold mb-3">Breakfast & Brunch</h3>
+        <a href="/products"
+          class="w-full inline-block text-center border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-full transition">
+          View
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feedback Section -->
+<section class="bg-orange-50 py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-h2 font-montserrat font-bold text-center text-primary mb-8">
+      We Value Your Feedback
+    </h2>
+
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8">
+      <form>
+        <!-- Name -->
+        <div class="mb-4">
+          <label class="block text-gray-700 font-semibold mb-2">Name</label>
+          <input type="text" placeholder="Your Name"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+        </div>
+
+        <!-- Email -->
+        <div class="mb-4">
+          <label class="block text-gray-700 font-semibold mb-2">Email address</label>
+          <input type="email" placeholder="Your Email"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+        </div>
+
+        <!-- Message -->
+        <div class="mb-6">
+          <label class="block text-gray-700 font-semibold mb-2">Message</label>
+          <textarea placeholder="Your Feedback" rows="4"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+          class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-full transition flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+            </path>
+          </svg>
+          Send Feedback
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const indicators = document.querySelectorAll('.indicator');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    indicators[currentSlide].classList.remove('bg-white');
+    indicators[currentSlide].classList.add('bg-opacity-50');
+
+    currentSlide = (n + slides.length) % slides.length;
+
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('bg-white');
+    indicators[currentSlide].classList.remove('bg-opacity-50');
+  }
+
+  function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+  }
+
+  function goToSlide(n) {
+    showSlide(n);
+  }
+
+  // Auto slide every 5 seconds
+  setInterval(() => {
+    changeSlide(1);
+  }, 5000);
+</script>
