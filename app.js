@@ -81,8 +81,9 @@ app.get('/login', (req, res) =>
 // ---------------------
 
 app.get('/dashboard', (req, res) =>
-  res.render('users/dashboard', { ...seoData.dashboard, layout: 'users/dashlayout' })
+  res.render('users/profile', { ...seoData.profile, layout: 'users/dashlayout' })
 );
+
 
 app.get('/profile', (req, res) =>
   res.render('users/profile', { ...seoData.profile, layout: 'users/dashlayout' })

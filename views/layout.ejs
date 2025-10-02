@@ -31,8 +31,6 @@
   <!-- Tailwind compiled CSS -->
   <link rel="stylesheet" href="/css/output.css">
 
-  <!-- Main CSS -->
-  <!-- <link rel="stylesheet" href="/css/main.css"> -->
 </head>
 
 <body class="font-montserrat bg-white text-gray-900">
@@ -40,14 +38,15 @@
   <!-- Header -->
   <%- include("partials/header") %>
 
-  <!-- Page Content -->
-  <main class="min-h-screen pt-20">
-    <%- body %>
-  </main>
+    <!-- Page Content -->
+    <main class="min-h-screen pt-12 md:pt-20">
+      <%- body %>
+    </main>
 
-  <!-- Footer -->
-  <%- include("partials/footer") %>
+    <!-- Footer -->
+    <%- include("partials/footer") %>
 
- 
+
 </body>
+
 </html>
