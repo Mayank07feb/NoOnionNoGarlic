@@ -61,26 +61,26 @@
 
             <!-- Product Card 1 -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
-                <div
-                    class="h-48 sm:h-56 md:h-64 bg-gray-900 flex items-center justify-center overflow-hidden rounded-xl">
+                <div class="h-48 sm:h-56 md:h-64 bg-gray-900 flex items-center justify-center overflow-hidden rounded-xl cursor-pointer"
+                    onclick="openModal('Mango', '$12.00', 'Fresh mango full of vitamins.', 'https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=400&h=300&fit=crop')">
                     <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=400&h=300&fit=crop"
-                        alt="Mango Noodles" class="w-full h-full object-cover rounded-xl">
+                        alt="Mango" class="w-full h-full object-cover rounded-xl">
                 </div>
                 <div class="p-3 sm:p-4 md:p-6">
-                    <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">Mango</h5>
+                    <h5 onclick="openModal('Mango', '$12.00', 'Fresh mango full of vitamins.', 'https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=400&h=300&fit=crop')"
+                        class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4 cursor-pointer">
+                        Mango
+                    </h5>
                     <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
                         <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_up</span>
-                            <span>Like</span>
+                            <span class="material-icons text-base sm:text-lg">thumb_up</span><span>Like</span>
                         </button>
                         <button onclick="openCommentPopup('Mango')"
                             class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">comment</span>
-                            <span>Comment</span>
+                            <span class="material-icons text-base sm:text-lg">comment</span><span>Comment</span>
                         </button>
                         <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_down</span>
-                            <span>Dislike</span>
+                            <span class="material-icons text-base sm:text-lg">thumb_down</span><span>Dislike</span>
                         </button>
                     </div>
                 </div>
@@ -88,8 +88,8 @@
 
             <!-- Product Card 2 -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
-                <div
-                    class="h-48 sm:h-56 md:h-64 bg-gradient-to-br from-secondary to-secondary-hover flex items-center justify-center p-4 sm:p-6 rounded-xl">
+                <div class="h-48 sm:h-56 md:h-64 bg-gradient-to-br from-secondary to-secondary-hover flex items-center justify-center p-4 sm:p-6 rounded-xl cursor-pointer"
+                    onclick="openModal('Tomato Ketchup', '$5.50', 'Delicious tomato ketchup for your snacks.', 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=400&h=300&fit=crop')">
                     <div
                         class="relative w-36 sm:w-40 md:w-48 h-36 sm:h-40 md:h-48 bg-blue-400 rounded-full flex items-center justify-center">
                         <div class="text-center text-white text-xs sm:text-sm md:text-base">
@@ -99,21 +99,20 @@
                     </div>
                 </div>
                 <div class="p-3 sm:p-4 md:p-6">
-                    <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">Tomato Ketchup
+                    <h5 onclick="openModal('Tomato Ketchup', '$5.50', 'Delicious tomato ketchup for your snacks.', 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=400&h=300&fit=crop')"
+                        class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4 cursor-pointer">
+                        Tomato Ketchup
                     </h5>
                     <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
                         <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_up</span>
-                            <span>Like</span>
+                            <span class="material-icons text-base sm:text-lg">thumb_up</span><span>Like</span>
                         </button>
                         <button onclick="openCommentPopup('Tomato Ketchup')"
                             class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">comment</span>
-                            <span>Comment</span>
+                            <span class="material-icons text-base sm:text-lg">comment</span><span>Comment</span>
                         </button>
                         <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_down</span>
-                            <span>Dislike</span>
+                            <span class="material-icons text-base sm:text-lg">thumb_down</span><span>Dislike</span>
                         </button>
                     </div>
                 </div>
@@ -121,27 +120,26 @@
 
             <!-- Product Card 3 -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
-                <div
-                    class="h-48 sm:h-56 md:h-64 bg-gray-800 flex items-center justify-center overflow-hidden rounded-xl">
+                <div class="h-48 sm:h-56 md:h-64 bg-gray-800 flex items-center justify-center overflow-hidden rounded-xl cursor-pointer"
+                    onclick="openModal('Chocolate Cake', '$20.00', 'Rich chocolate cake for sweet lovers.', 'https://images.unsplash.com/photo-1601050699279-c045f0b3c1b2?w=400&h=300&fit=crop')">
                     <img src="https://images.unsplash.com/photo-1601050699279-c045f0b3c1b2?w=400&h=300&fit=crop"
                         alt="Chocolate Cake" class="w-full h-full object-cover rounded-xl">
                 </div>
                 <div class="p-3 sm:p-4 md:p-6">
-                    <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">Chocolate Cake
+                    <h5 onclick="openModal('Chocolate Cake', '$20.00', 'Rich chocolate cake for sweet lovers.', 'https://images.unsplash.com/photo-1601050699279-c045f0b3c1b2?w=400&h=300&fit=crop')"
+                        class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4 cursor-pointer">
+                        Chocolate Cake
                     </h5>
                     <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
                         <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_up</span>
-                            <span>Like</span>
+                            <span class="material-icons text-base sm:text-lg">thumb_up</span><span>Like</span>
                         </button>
                         <button onclick="openCommentPopup('Chocolate Cake')"
                             class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">comment</span>
-                            <span>Comment</span>
+                            <span class="material-icons text-base sm:text-lg">comment</span><span>Comment</span>
                         </button>
                         <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_down</span>
-                            <span>Dislike</span>
+                            <span class="material-icons text-base sm:text-lg">thumb_down</span><span>Dislike</span>
                         </button>
                     </div>
                 </div>
@@ -149,8 +147,8 @@
 
             <!-- Product Card 4 -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
-                <div
-                    class="h-48 sm:h-56 md:h-64 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center p-4 sm:p-6 rounded-xl">
+                <div class="h-48 sm:h-56 md:h-64 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center p-4 sm:p-6 rounded-xl cursor-pointer"
+                    onclick="openModal('Orange Juice', '$8.00', 'Refreshing orange juice with vitamin C.', 'https://images.unsplash.com/photo-1617196037300-0f1d233a7cdc?w=400&h=300&fit=crop')">
                     <div
                         class="relative w-36 sm:w-40 md:w-48 h-36 sm:h-40 md:h-48 rounded-full bg-yellow-400 flex items-center justify-center">
                         <div class="text-center text-white text-xs sm:text-sm md:text-base">
@@ -160,21 +158,20 @@
                     </div>
                 </div>
                 <div class="p-3 sm:p-4 md:p-6">
-                    <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">Orange Juice
+                    <h5 onclick="openModal('Orange Juice', '$8.00', 'Refreshing orange juice with vitamin C.', 'https://images.unsplash.com/photo-1617196037300-0f1d233a7cdc?w=400&h=300&fit=crop')"
+                        class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4 cursor-pointer">
+                        Orange Juice
                     </h5>
                     <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
                         <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_up</span>
-                            <span>Like</span>
+                            <span class="material-icons text-base sm:text-lg">thumb_up</span><span>Like</span>
                         </button>
                         <button onclick="openCommentPopup('Orange Juice')"
                             class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">comment</span>
-                            <span>Comment</span>
+                            <span class="material-icons text-base sm:text-lg">comment</span><span>Comment</span>
                         </button>
                         <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_down</span>
-                            <span>Dislike</span>
+                            <span class="material-icons text-base sm:text-lg">thumb_down</span><span>Dislike</span>
                         </button>
                     </div>
                 </div>
@@ -183,125 +180,205 @@
         </div>
     </div>
 
-    <!-- Recipe Video Section -->
-    <div class="mb-8 sm:mb-12">
-        <h5 class="text-lg sm:text-xl font-bold text-primary mb-4 sm:mb-6">Recipe Videos</h5>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <!-- Product Modal -->
+    <div id="productModal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-xl w-full max-w-3xl p-4 sm:p-6 relative overflow-y-auto max-h-[90vh]">
 
-            <!-- Video Card 1 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
-                <div class="w-full aspect-video overflow-hidden rounded-xl">
-                    <iframe class="w-full h-full rounded-xl shadow-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        title="Recipe Video 1" frameborder="0" allowfullscreen></iframe>
+            <!-- Close Button -->
+            <button onclick="closeModal()"
+                class="absolute top-3 right-3 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow hover:bg-primary-dark">
+                <span class="material-icons text-xl">close</span>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Image Section -->
+                <div class="flex items-center justify-center">
+                    <img id="modalImage" src="" alt="Product Image"
+                        class="rounded-xl w-full max-h-72 sm:max-h-80 object-cover">
                 </div>
-                <div class="p-3 sm:p-4 md:p-6">
-                    <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">
-                        Plain Hakka Noodles
-                    </h5>
-                    <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
-                        <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_up</span>
-                            <span>Like</span>
-                        </button>
-                        <button onclick="openCommentPopup('Plain Hakka Noodles')"
-                            class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">comment</span>
-                            <span>Comment</span>
-                        </button>
-                        <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_down</span>
-                            <span>Dislike</span>
+
+                <!-- Content Section -->
+                <div class="flex flex-col justify-center">
+                    <h2 id="modalTitle"
+                        class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2 text-center md:text-left">
+                        Product Title
+                    </h2>
+                    <p id="modalPrice"
+                        class="text-lg sm:text-xl md:text-2xl text-primary font-semibold mb-4 text-center md:text-left">
+                        $0.00
+                    </p>
+                    <p id="modalDesc" class="text-gray-600 text-sm sm:text-base mb-6 text-center md:text-left">
+                        Product description goes here.
+                    </p>
+
+                    <!-- Buy Now Button -->
+                    <div class="flex justify-center md:justify-start">
+                        <button
+                            class="bg-primary hover:bg-primary-hover text-white px-5 sm:px-6 py-2 sm:py-3 rounded-lg w-full sm:w-auto text-sm sm:text-base">
+                            Buy Now
                         </button>
                     </div>
                 </div>
             </div>
-
-            <!-- Video Card 2 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
-                <div class="w-full aspect-video overflow-hidden rounded-xl">
-                    <iframe class="w-full h-full rounded-xl shadow-lg" src="https://www.youtube.com/embed/oHg5SJYRHA0"
-                        title="Recipe Video 2" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="p-3 sm:p-4 md:p-6">
-                    <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">
-                        Veg Fried Rice
-                    </h5>
-                    <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
-                        <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_up</span>
-                            <span>Like</span>
-                        </button>
-                        <button onclick="openCommentPopup('Veg Fried Rice')"
-                            class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">comment</span>
-                            <span>Comment</span>
-                        </button>
-                        <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_down</span>
-                            <span>Dislike</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Video Card 3 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
-                <div class="w-full aspect-video overflow-hidden rounded-xl">
-                    <iframe class="w-full h-full rounded-xl shadow-lg" src="https://www.youtube.com/embed/3JZ_D3ELwOQ"
-                        title="Recipe Video 3" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="p-3 sm:p-4 md:p-6">
-                    <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">
-                        Paneer Butter Masala
-                    </h5>
-                    <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
-                        <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_up</span>
-                            <span>Like</span>
-                        </button>
-                        <button onclick="openCommentPopup('Paneer Butter Masala')"
-                            class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">comment</span>
-                            <span>Comment</span>
-                        </button>
-                        <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_down</span>
-                            <span>Dislike</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Video Card 4 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
-                <div class="w-full aspect-video overflow-hidden rounded-xl">
-                    <iframe class="w-full h-full rounded-xl shadow-lg" src="https://www.youtube.com/embed/L_jWHffIx5E"
-                        title="Recipe Video 4" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="p-3 sm:p-4 md:p-6">
-                    <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">
-                        Veg Spring Rolls
-                    </h5>
-                    <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
-                        <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_up</span>
-                            <span>Like</span>
-                        </button>
-                        <button onclick="openCommentPopup('Veg Spring Rolls')"
-                            class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">comment</span>
-                            <span>Comment</span>
-                        </button>
-                        <button class="flex items-center gap-1 hover:text-primary-hover">
-                            <span class="material-icons text-base sm:text-lg">thumb_down</span>
-                            <span>Dislike</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
+
+    <!-- JS -->
+    <script>
+        function openModal(title, price, desc, img) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalImage').src = img;
+            document.getElementById('productModal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('productModal').classList.add('hidden');
+        }
+    </script>
+
+   <!-- Recipe Video Section -->
+<div class="mb-8 sm:mb-12">
+  <h5 class="text-lg sm:text-xl font-bold text-primary mb-4 sm:mb-6">Recipe Videos</h5>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+
+    <!-- Video Card 1 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
+      <div class="w-full aspect-video overflow-hidden rounded-xl cursor-pointer relative" 
+           onclick="openVideoInNewTab('dQw4w9WgXcQ')">
+        <img class="w-full h-full object-cover rounded-xl shadow-lg"
+             src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg"
+             alt="Plain Hakka Noodles">
+        <span class="material-icons absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-4xl opacity-80">play_circle</span>
+      </div>
+      <div class="p-3 sm:p-4 md:p-6">
+        <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">
+          Plain Hakka Noodles
+        </h5>
+        <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
+          <button class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">thumb_up</span>
+            <span>Like</span>
+          </button>
+          <button onclick="openCommentPopup('Plain Hakka Noodles')" class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">comment</span>
+            <span>Comment</span>
+          </button>
+          <button class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">thumb_down</span>
+            <span>Dislike</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Card 2 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
+      <div class="w-full aspect-video overflow-hidden rounded-xl cursor-pointer relative" 
+           onclick="openVideoInNewTab('oHg5SJYRHA0')">
+        <img class="w-full h-full object-cover rounded-xl shadow-lg"
+             src="https://i.ytimg.com/vi/oHg5SJYRHA0/hqdefault.jpg"
+             alt="Veg Fried Rice">
+        <span class="material-icons absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-4xl opacity-80">play_circle</span>
+      </div>
+      <div class="p-3 sm:p-4 md:p-6">
+        <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">
+          Veg Fried Rice
+        </h5>
+        <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
+          <button class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">thumb_up</span>
+            <span>Like</span>
+          </button>
+          <button onclick="openCommentPopup('Veg Fried Rice')" class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">comment</span>
+            <span>Comment</span>
+          </button>
+          <button class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">thumb_down</span>
+            <span>Dislike</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Card 3 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
+      <div class="w-full aspect-video overflow-hidden rounded-xl cursor-pointer relative" 
+           onclick="openVideoInNewTab('3JZ_D3ELwOQ')">
+        <img class="w-full h-full object-cover rounded-xl shadow-lg"
+             src="https://i.ytimg.com/vi/3JZ_D3ELwOQ/hqdefault.jpg"
+             alt="Paneer Butter Masala">
+        <span class="material-icons absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-4xl opacity-80">play_circle</span>
+      </div>
+      <div class="p-3 sm:p-4 md:p-6">
+        <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">
+          Paneer Butter Masala
+        </h5>
+        <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
+          <button class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">thumb_up</span>
+            <span>Like</span>
+          </button>
+          <button onclick="openCommentPopup('Paneer Butter Masala')" class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">comment</span>
+            <span>Comment</span>
+          </button>
+          <button class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">thumb_down</span>
+            <span>Dislike</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Card 4 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden p-2">
+      <div class="w-full aspect-video overflow-hidden rounded-xl cursor-pointer relative" 
+           onclick="openVideoInNewTab('L_jWHffIx5E')">
+        <img class="w-full h-full object-cover rounded-xl shadow-lg"
+             src="https://i.ytimg.com/vi/L_jWHffIx5E/hqdefault.jpg"
+             alt="Veg Spring Rolls">
+        <span class="material-icons absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-4xl opacity-80">play_circle</span>
+      </div>
+      <div class="p-3 sm:p-4 md:p-6">
+        <h5 class="text-md sm:text-lg font-semibold text-gray-800 text-center mb-2 sm:mb-4">
+          Veg Spring Rolls
+        </h5>
+        <div class="flex justify-center items-center gap-3 sm:gap-4 text-primary text-xs sm:text-sm">
+          <button class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">thumb_up</span>
+            <span>Like</span>
+          </button>
+          <button onclick="openCommentPopup('Veg Spring Rolls')" class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">comment</span>
+            <span>Comment</span>
+          </button>
+          <button class="flex items-center gap-1 hover:text-primary-hover">
+            <span class="material-icons text-base sm:text-lg">thumb_down</span>
+            <span>Dislike</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function openVideoInNewTab(videoId) {
+    const url = `https://www.youtube.com/watch?v=${videoId}`;
+    window.open(url, '_blank'); // Open video in a new browser tab
+  }
+
+  function openCommentPopup(videoTitle) {
+    alert(`Open comment popup for: ${videoTitle}`);
+  }
+</script>
+
+
 
     <!-- Comment Popup Modal -->
     <div id="commentModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
