@@ -24,11 +24,11 @@
         </a>
       </div>
 
-
       <!-- Center: Navigation -->
       <div class="hidden lg:flex space-x-8 font-inter font-medium text-gray-800">
         <a href="/" class="px-3 py-2 rounded-md hover:bg-orange-100 transition">Home</a>
         <a href="/about" class="px-3 py-2 rounded-md hover:bg-orange-100 transition">About</a>
+        <a href="/blogs" class="px-3 py-2 rounded-md hover:bg-orange-100 transition">Blogs</a>
         <a href="/contact" class="px-3 py-2 rounded-md hover:bg-orange-100 transition">Contact Us</a>
       </div>
 
@@ -69,6 +69,9 @@
         <a href="/about" class="flex items-center gap-2 px-3 py-2 rounded hover:bg-orange-100">
           <span class="material-icons text-gray-500">info</span> About
         </a>
+        <a href="/blogs" class="flex items-center gap-2 px-3 py-2 rounded hover:bg-orange-100">
+          <span class="material-icons text-gray-500">article</span> Blogs
+        </a>
         <a href="/contact" class="flex items-center gap-2 px-3 py-2 rounded hover:bg-orange-100">
           <span class="material-icons text-gray-500">call</span> Contact Us
         </a>
@@ -88,7 +91,6 @@
     </div>
   </div>
 </header>
-<!-- ================= End Header Section ================= -->
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -99,7 +101,7 @@
     // Open menu
     menuBtn.addEventListener("click", (e) => {
       mobileMenu.classList.remove("-translate-x-full");
-      e.stopPropagation(); // Prevent immediate close when clicking the button
+      e.stopPropagation();
     });
 
     // Close menu via close button

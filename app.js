@@ -36,6 +36,22 @@ app.get('/about', (req, res) =>
   })
 );
 
+// Blogs Page
+app.get('/blogs', (req, res) =>
+  res.render('blogs', {
+    meta_title: 'Blogs - No Onion No Garlic',
+    meta_description: 'Read our latest articles, recipes, and Satvik lifestyle tips.'
+  })
+);
+
+app.get('/blogs/blog-details', (req, res) =>
+  res.render('blog-details', {  // no 'blogs/' prefix
+    meta_title: 'Satvik Recipes for Beginners - No Onion No Garlic',
+    meta_description: 'Learn the basics of Satvik cooking with easy-to-follow recipes that are pure and nourishing.'
+  })
+);
+
+
 // Contact
 app.get('/contact', (req, res) =>
   res.render('contact', {
@@ -43,6 +59,15 @@ app.get('/contact', (req, res) =>
     meta_description: seoData.contact.meta_description
   })
 );
+
+// Privacy Policy Page
+app.get('/privacy', (req, res) =>
+  res.render('privacy', {
+    meta_title: 'Privacy Policy - No Onion No Garlic',
+    meta_description: 'Learn how No Onion No Garlic collects, uses, and protects your personal information.'
+  })
+);
+
 
 // Product Page
 app.get('/products', (req, res) =>
@@ -57,6 +82,22 @@ app.get('/product-details', (req, res) =>
   res.render('product-details', {
     meta_title: 'Sample Product',
     meta_description: 'This is a detailed description of the sample product.'
+  })
+);
+
+// Restaurants Page
+app.get('/restaurants', (req, res) =>
+  res.render('restaurants', {
+    meta_title: 'Restaurants – No Onion No Garlic Dining',
+    meta_description: 'Discover Satvik restaurants serving pure vegetarian food without onion and garlic.'
+  })
+);
+
+// Restaurant Details Page
+app.get('/restaurant-details', (req, res) =>
+  res.render('restaurant-details', {
+    meta_title: 'Restaurant Details – No Onion No Garlic',
+    meta_description: 'View detailed information about this Satvik restaurant including menu, location, and timings.'
   })
 );
 
