@@ -101,6 +101,15 @@ app.get('/restaurant-details', (req, res) =>
   })
 );
 
+// ⭐ NEW CITY-WISE RESTAURANTS PAGE
+// ---------------------
+app.get('/city-restaurants', (req, res) => {
+  res.render('city-restaurants', {
+    meta_title: 'City-wise Satvik Restaurants',
+    meta_description: 'Browse restaurants by city.'
+  });
+});
+
 // Register Page
 app.get('/register', (req, res) =>
   res.render('register', {

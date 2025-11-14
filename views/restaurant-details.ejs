@@ -4,122 +4,149 @@
 <!-- =============== Restaurant Details Section =============== -->
 <section class="bg-orange-50 py-16">
   <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
     <!-- Back Button -->
     <a href="/" class="inline-flex items-center text-primary mb-6 hover:underline">
-      <span class="material-icons-outlined text-base mr-1">arrow_back</span> Back to Restaurants
+      <span class="material-icons-outlined text-base mr-1">arrow_back</span>
+      Back to Restaurants
     </a>
 
-    <!-- Restaurant Hero -->
     <div class="bg-white shadow-lg rounded-xl overflow-hidden">
-      <img
-        src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=1600&q=80"
-        alt="Govinda’s Pure Veg"
-        class="w-full h-80 object-cover"
-      />
+
+      <!-- Hero Image -->
+      <img 
+        src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80"
+        class="w-full h-80 object-cover" />
 
       <div class="p-8">
-        <!-- Restaurant Title and Badges -->
+
         <h1 class="text-3xl font-bold text-gray-800 mb-3">Govinda’s Pure Veg</h1>
 
-        <!-- Badges Row -->
+        <!-- ================= EMOJI MEDAL BADGES ================= -->
         <div class="flex flex-wrap items-center gap-3 mb-4">
-          <!-- Verified Badge -->
+
+          <!-- Bronze -->
+          <div class="flex items-center bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+            🥉 Bronze – Verified by Phone
+          </div>
+
+          <!-- Silver -->
+          <div class="flex items-center bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+            🥈 Silver – Verified by Visit
+          </div>
+
+          <!-- Gold -->
+          <div class="flex items-center bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+            🥇 Gold – Verified by Inspection
+          </div>
+
+        </div>
+
+        <!-- Existing Badges -->
+        <div class="flex flex-wrap items-center gap-3 mb-4">
           <div class="flex items-center bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
-            <span class="material-icons-outlined text-green-600 text-base mr-1">verified</span>
+            <span class="material-icons-outlined text-green-600 mr-1">verified</span>
             Verified by Visit Mobile Web
           </div>
 
-          <!-- Pure Veg Badge -->
           <div class="flex items-center bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-medium">
-            <span class="material-icons-outlined text-orange-600 text-base mr-1">eco</span>
+            <span class="material-icons-outlined text-orange-600 mr-1">eco</span>
             100% Pure Veg Certified
           </div>
 
-          <!-- Top Rated Badge -->
           <div class="flex items-center bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
-            <span class="material-icons-outlined text-yellow-600 text-base mr-1">star</span>
+            <span class="material-icons-outlined text-yellow-600 mr-1">star</span>
             Top Rated Restaurant
           </div>
         </div>
 
         <p class="text-gray-600 mb-4">ISKCON Campus, Ujjain, Madhya Pradesh</p>
 
-        <!-- Rating -->
         <div class="flex items-center text-yellow-500 mb-6">
-          <span class="material-icons-outlined text-lg">star</span>
-          <span class="material-icons-outlined text-lg">star</span>
-          <span class="material-icons-outlined text-lg">star</span>
-          <span class="material-icons-outlined text-lg">star_half</span>
-          <span class="material-icons-outlined text-lg text-gray-300">star</span>
+          <span class="material-icons-outlined">star</span>
+          <span class="material-icons-outlined">star</span>
+          <span class="material-icons-outlined">star</span>
+          <span class="material-icons-outlined">star_half</span>
+          <span class="material-icons-outlined text-gray-300">star</span>
           <span class="text-gray-600 ml-2">(4.5 / 5)</span>
         </div>
 
         <p class="text-gray-700 leading-relaxed mb-8">
-          Govinda’s Pure Veg offers a serene dining experience inside the ISKCON campus. Known for its
-          sattvik meals prepared without onion and garlic, it serves a range of North Indian, South Indian,
-          and continental dishes made with devotion. Enjoy prasadam in a peaceful and spiritual environment.
+          Govinda’s Pure Veg offers sattvik meals without onion & garlic inside the ISKCON campus.
         </p>
 
-        <!-- Restaurant Info Grid -->
+        <!-- Info Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+
           <div class="flex items-center space-x-3">
             <span class="material-icons-outlined text-primary">location_on</span>
-            <p class="text-gray-700">ISKCON Campus, Near Nanakheda, Ujjain</p>
+            <p>ISKCON Campus, Near Nanakheda, Ujjain</p>
           </div>
+
           <div class="flex items-center space-x-3">
             <span class="material-icons-outlined text-primary">phone</span>
-            <p class="text-gray-700">+91 98765 43210</p>
+            <p>+91 98765 43210</p>
           </div>
+
           <div class="flex items-center space-x-3">
             <span class="material-icons-outlined text-primary">schedule</span>
-            <p class="text-gray-700">Mon–Sun: 10:00 AM – 9:30 PM</p>
+            <p>Mon–Sun: 10:00 AM – 9:30 PM</p>
           </div>
+
           <div class="flex items-center space-x-3">
             <span class="material-icons-outlined text-primary">public</span>
-            <a href="https://govindasujjain.com" target="_blank" class="text-primary hover:underline">
-              govindasujjain.com
-            </a>
+            <a href="https://govindasujjain.com" class="text-primary hover:underline">govindasujjain.com</a>
           </div>
+
         </div>
 
-        <!-- Menu Section -->
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Popular Dishes</h2>
+        <!-- Popular Dishes -->
+        <h2 class="text-2xl font-semibold mb-4">Popular Dishes</h2>
+
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
           <div class="bg-orange-100 p-4 rounded-lg shadow">
-            <img src="https://images.unsplash.com/photo-1604908812125-1e94a89e9081?auto=format&fit=crop&w=800&q=80"
-                 alt="Paneer Butter Masala"
-                 class="w-full h-40 object-cover rounded-md mb-3">
-            <h3 class="font-semibold text-gray-800">Paneer Butter Masala</h3>
+            <img 
+              src="https://images.unsplash.com/photo-1601050690597-1d46a02dd1d1?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-40 object-cover rounded-md mb-3" />
+            <h3 class="font-semibold">Paneer Butter Masala</h3>
           </div>
+
           <div class="bg-orange-100 p-4 rounded-lg shadow">
-            <img src="https://images.unsplash.com/photo-1617196035407-6d7d768f0a97?auto=format&fit=crop&w=800&q=80"
-                 alt="Veg Thali"
-                 class="w-full h-40 object-cover rounded-md mb-3">
-            <h3 class="font-semibold text-gray-800">Traditional Veg Thali</h3>
+            <img 
+              src="https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-40 object-cover rounded-md mb-3" />
+            <h3 class="font-semibold">Traditional Veg Thali</h3>
           </div>
+
           <div class="bg-orange-100 p-4 rounded-lg shadow">
-            <img src="https://images.unsplash.com/photo-1598514983311-34f3b1f9f0a3?auto=format&fit=crop&w=800&q=80"
-                 alt="Gulab Jamun"
-                 class="w-full h-40 object-cover rounded-md mb-3">
-            <h3 class="font-semibold text-gray-800">Gulab Jamun</h3>
+            <img 
+              src="https://images.unsplash.com/photo-1576402187877-307f23d254a5?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-40 object-cover rounded-md mb-3" />
+            <h3 class="font-semibold">Gulab Jamun</h3>
           </div>
+
         </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- =============== Map Section =============== -->
+<!-- Map -->
 <section class="bg-white py-12">
-  <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Location Map</h2>
+  <div class="container max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl font-semibold mb-4">Location Map</h2>
+
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.0230431296314!2d75.77221767490208!3d23.172373813454853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396374d51cf0ef2f%3A0x6847b5076e80da5a!2sISKCON%20Ujjain!5e0!3m2!1sen!2sin!4v1701010100000!5m2!1sen!2sin"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.598590742175!2d75.78593507474256!3d23.177989412021444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39637426d2927439%3A0x9b4cb1bd11d1a3ca!2sISKCON%20Ujjain!5e0!3m2!1sen!2sin!4v1709455978896!5m2!1sen!2sin"
       width="100%"
       height="400"
       class="rounded-lg border-0"
       allowfullscreen=""
-      loading="lazy">
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
     </iframe>
+
   </div>
 </section>

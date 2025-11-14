@@ -1,0 +1,130 @@
+<!-- Google Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+<style>
+  .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 10;
+  }
+  .badge-gold { background: #D4AF37; }
+  .badge-silver { background: #C0C0C0; }
+  .badge-bronze { background: #CD7F32; }
+</style>
+
+<!-- ================= Restaurants Hero Section ================= -->
+<section class="bg-orange-50 py-16">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-primary text-sm mb-2">Pure Vegetarian & Sattvik Dining</p>
+
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+      Agra – No Onion No Garlic Restaurants
+    </h1>
+
+    <p class="text-gray-600 mb-4 max-w-2xl mx-auto">
+      Handpicked list of best Sattvik NO ONION NO GARLIC restaurants in Agra.
+    </p>
+  </div>
+</section>
+
+<!-- ================= Agra Restaurants ================= -->
+<section class="bg-white py-16">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Restaurant 1 — GOLD -->
+      <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative">
+
+        <div class="badge badge-gold">
+          <span class="material-icons-outlined text-sm">verified</span> Gold
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80" 
+             alt="Prem Prasad" class="w-full h-48 object-cover">
+
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Prem Prasad</h3>
+          <p class="text-gray-600 mb-3">Agra, Uttar Pradesh</p>
+
+          <div class="flex items-center text-yellow-500 mb-4">
+            <span class="material-icons-outlined text-base">star</span>
+            <span class="material-icons-outlined text-base">star</span>
+            <span class="material-icons-outlined text-base">star</span>
+            <span class="material-icons-outlined text-base">star</span>
+            <span class="material-icons-outlined text-base">star_half</span>
+          </div>
+
+          <a href="/restaurant-details" class="inline-flex items-center gap-1 text-primary font-semibold hover:underline">
+            View Details <span class="material-icons-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Restaurant 2 — SILVER -->
+      <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative">
+
+        <div class="badge badge-silver">
+          <span class="material-icons-outlined text-sm">shield</span> Silver
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" 
+             alt="Agra Satvik Kitchen" class="w-full h-48 object-cover">
+
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Agra Satvik Kitchen</h3>
+          <p class="text-gray-600 mb-3">Agra, Uttar Pradesh</p>
+
+          <div class="flex items-center text-yellow-500 mb-4">
+            <span class="material-icons-outlined">star</span>
+            <span class="material-icons-outlined">star</span>
+            <span class="material-icons-outlined">star</span>
+            <span class="material-icons-outlined text-gray-300">star</span>
+            <span class="material-icons-outlined text-gray-300">star</span>
+          </div>
+
+          <a href="/restaurant-details" class="inline-flex items-center gap-1 text-primary font-semibold hover:underline">
+            View Details <span class="material-icons-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Restaurant 3 — BRONZE -->
+      <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative">
+
+        <div class="badge badge-bronze">
+          <span class="material-icons-outlined text-sm">workspace_premium</span> Bronze
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80" 
+             alt="Prasadam Bhojanalaya" class="w-full h-48 object-cover">
+
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Prasadam Bhojanalaya</h3>
+          <p class="text-gray-600 mb-3">Agra, Uttar Pradesh</p>
+
+          <div class="flex items-center text-yellow-500 mb-4">
+            <span class="material-icons-outlined">star</span>
+            <span class="material-icons-outlined">star</span>
+            <span class="material-icons-outlined">star_half</span>
+            <span class="material-icons-outlined text-gray-300">star</span>
+            <span class="material-icons-outlined text-gray-300">star</span>
+          </div>
+
+          <a href="/restaurant-details" class="inline-flex items-center gap-1 text-primary font-semibold hover:underline">
+            View Details <span class="material-icons-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
