@@ -14,11 +14,41 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    z-index: 10;
+    z-index: 50;
+    cursor: pointer;
   }
   .badge-gold { background: #D4AF37; }
   .badge-silver { background: #C0C0C0; }
   .badge-bronze { background: #CD7F32; }
+
+  /* Tooltip */
+  .tooltip {
+    position: absolute;
+    top: -36px;
+    right: 0;
+    background: #000;
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 11px;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    z-index: 999;
+  }
+
+  .badge:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-4px);
+  }
+
+  /* Card fix (important) */
+  .restaurant-card {
+    overflow: visible !important;
+    position: relative;
+  }
 </style>
 
 <!-- ================= Restaurants Hero Section ================= -->
@@ -42,10 +72,16 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
       <!-- Restaurant 1 — GOLD -->
-      <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative">
+      <div class="restaurant-card bg-orange-50 rounded-lg shadow-lg hover:shadow-xl transition">
 
         <div class="badge badge-gold">
-          <span class="material-icons-outlined text-sm">verified</span> Gold
+          <div class="tooltip">Verified by Inspection</div>
+
+          <!-- Shield + Check SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="white" viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15l-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z"/>
+          </svg>
+          Gold
         </div>
 
         <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80" 
@@ -70,10 +106,15 @@
       </div>
 
       <!-- Restaurant 2 — SILVER -->
-      <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative">
+      <div class="restaurant-card bg-orange-50 rounded-lg shadow-lg hover:shadow-xl transition">
 
         <div class="badge badge-silver">
-          <span class="material-icons-outlined text-sm">shield</span> Silver
+          <div class="tooltip">Verified by Visiting</div>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="white" viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15l-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z"/>
+          </svg>
+          Silver
         </div>
 
         <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" 
@@ -98,10 +139,15 @@
       </div>
 
       <!-- Restaurant 3 — BRONZE -->
-      <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative">
+      <div class="restaurant-card bg-orange-50 rounded-lg shadow-lg hover:shadow-xl transition">
 
         <div class="badge badge-bronze">
-          <span class="material-icons-outlined text-sm">workspace_premium</span> Bronze
+          <div class="tooltip">Verified by Phone</div>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="white" viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15l-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z"/>
+          </svg>
+          Bronze
         </div>
 
         <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80" 

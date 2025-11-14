@@ -2,25 +2,108 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 
 <style>
-  .badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    z-index: 10;
+  /* Make sure the card container allows the tooltip to escape and is a positioning context */
+  .restaurant-card {
+    position: relative;   /* positioning context for absolute badge */
+    overflow: visible;    /* IMPORTANT: allow tooltip to display outside the card */
   }
 
-  .badge-gold { background: #D4AF37; }
-  .badge-silver { background: #C0C0C0; }
-  .badge-bronze { background: #CD7F32; }
+  /* Badge (kept absolute so it's placed inside the card) */
+  .badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 40; /* ensure badge and tooltip stack above card content */
+  }
+
+  .badge svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Colors */
+  .badge-gold {
+    background: #FFF6D3;
+    color: #B8860B;
+    border: 1px solid #e8c878;
+  }
+  .badge-silver {
+    background: #F0F0F5;
+    color: #6B7280;
+    border: 1px solid #d4d4d8;
+  }
+  .badge-bronze {
+    background: #F3E4D3;
+    color: #A97142;
+    border: 1px solid #d1b08a;
+  }
+
+  /* Tooltip base (hidden by default) */
+  .badge::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    /* place above the badge and center it horizontally */
+    bottom: calc(100% + 10px); /* 10px gap above the badge */
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 180ms ease, transform 180ms ease;
+    z-index: 50;
+    pointer-events: none;
+  }
+
+  /* small arrow under tooltip */
+  .badge::before {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background: rgba(0,0,0,0.9);
+    opacity: 0;
+    transition: opacity 180ms ease;
+    z-index: 49;
+    pointer-events: none;
+  }
+
+  /* show on hover & focus (keyboard accessible) */
+  .badge:hover::after,
+  .badge:focus::after,
+  .badge[aria-expanded="true"]::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  .badge:hover::before,
+  .badge:focus::before,
+  .badge[aria-expanded="true"]::before {
+    opacity: 1;
+  }
+
+  /* visible when using keyboard focus */
+  .badge:focus {
+    outline: 2px solid rgba(66,153,225,0.25);
+    outline-offset: 2px;
+  }
 </style>
+
+
+
 
 <!-- ================= Restaurants Hero Section ================= -->
 <section class="bg-orange-50 py-16">
@@ -52,12 +135,17 @@
   <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div id="restaurantGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Restaurant Card — GOLD -->
+      <!-- ===================================================== -->
+      <!-- =============== GOLD CARD ========================== -->
+      <!-- ===================================================== -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="ujjain">
         
         <!-- GOLD BADGE -->
-        <div class="badge badge-gold">
-          <span class="material-icons-outlined text-sm">verified</span> Gold
+        <div class="badge badge-gold" data-tooltip="Gold – Verified by Inspection">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Gold
         </div>
 
         <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80" 
@@ -83,8 +171,11 @@
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="vrindavan">
         
         <!-- SILVER BADGE -->
-        <div class="badge badge-silver">
-          <span class="material-icons-outlined text-sm">shield</span> Silver
+        <div class="badge badge-silver" data-tooltip="Silver – Verified by Visiting">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Silver
         </div>
 
         <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" 
@@ -110,8 +201,11 @@
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="mumbai">
 
         <!-- BRONZE BADGE -->
-        <div class="badge badge-bronze">
-          <span class="material-icons-outlined text-sm">workspace_premium</span> Bronze
+        <div class="badge badge-bronze" data-tooltip="Bronze – Verified by Phone">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Bronze
         </div>
 
         <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80" 
@@ -136,8 +230,11 @@
       <!-- Restaurant Card — SILVER -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="mayapur">
 
-        <div class="badge badge-silver">
-          <span class="material-icons-outlined text-sm">shield</span> Silver
+        <div class="badge badge-silver" data-tooltip="Silver – Verified by Visiting">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Silver
         </div>
 
         <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" 
@@ -162,8 +259,11 @@
       <!-- Restaurant Card — BRONZE -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="ahmedabad">
 
-        <div class="badge badge-bronze">
-          <span class="material-icons-outlined text-sm">workspace_premium</span> Bronze
+        <div class="badge badge-bronze" data-tooltip="Bronze – Verified by Phone">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Bronze
         </div>
 
         <img src="https://images.unsplash.com/photo-1600891974207-7f1e46e5c4c3?auto=format&fit=crop&w=800&q=80" 
@@ -188,8 +288,11 @@
       <!-- Restaurant Card — GOLD -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="bangalore">
 
-        <div class="badge badge-gold">
-          <span class="material-icons-outlined text-sm">verified</span> Gold
+        <div class="badge badge-gold" data-tooltip="Gold – Verified by Inspection">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Gold
         </div>
 
         <img src="https://images.unsplash.com/photo-1625943514233-44d67f54b8d2?auto=format&fit=crop&w=800&q=80" 
@@ -214,8 +317,11 @@
       <!-- Restaurant Card — GOLD -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="agra">
 
-        <div class="badge badge-gold">
-          <span class="material-icons-outlined text-sm">verified</span> Gold
+        <div class="badge badge-gold" data-tooltip="Gold – Verified by Inspection">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Gold
         </div>
 
         <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80" 
@@ -240,8 +346,11 @@
       <!-- Restaurant Card — SILVER -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="kanpur">
 
-        <div class="badge badge-silver">
-          <span class="material-icons-outlined text-sm">shield</span> Silver
+        <div class="badge badge-silver" data-tooltip="Silver – Verified by Visiting">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Silver
         </div>
 
         <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" 
@@ -266,8 +375,11 @@
       <!-- Restaurant Card — BRONZE -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="jaipur">
 
-        <div class="badge badge-bronze">
-          <span class="material-icons-outlined text-sm">workspace_premium</span> Bronze
+        <div class="badge badge-bronze" data-tooltip="Bronze – Verified by Phone">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Bronze
         </div>
 
         <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80" 
@@ -292,8 +404,11 @@
       <!-- Restaurant Card — SILVER -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="varanasi">
 
-        <div class="badge badge-silver">
-          <span class="material-icons-outlined text-sm">shield</span> Silver
+        <div class="badge badge-silver" data-tooltip="Silver – Verified by Visiting">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Silver
         </div>
 
         <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" 
@@ -318,8 +433,11 @@
       <!-- Restaurant Card — GOLD -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="pune">
 
-        <div class="badge badge-gold">
-          <span class="material-icons-outlined text-sm">verified</span> Gold
+        <div class="badge badge-gold" data-tooltip="Gold – Verified by Inspection">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Gold
         </div>
 
         <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=800&q=80" 
@@ -344,8 +462,11 @@
       <!-- Restaurant Card — BRONZE -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="lucknow">
 
-        <div class="badge badge-bronze">
-          <span class="material-icons-outlined text-sm">workspace_premium</span> Bronze
+        <div class="badge badge-bronze" data-tooltip="Bronze – Verified by Phone">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Bronze
         </div>
 
         <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80" 
@@ -370,8 +491,11 @@
       <!-- Restaurant Card — SILVER -->
       <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative" data-city="haridwar">
 
-        <div class="badge badge-silver">
-          <span class="material-icons-outlined text-sm">shield</span> Silver
+        <div class="badge badge-silver" data-tooltip="Silver – Verified by Visiting">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z"/>
+          </svg>
+          Silver
         </div>
 
         <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" 
