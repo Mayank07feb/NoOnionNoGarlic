@@ -2,175 +2,169 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 
 <style>
-  .badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    z-index: 50;
-    cursor: pointer;
-  }
-  .badge-gold { background: #D4AF37; }
-  .badge-silver { background: #C0C0C0; }
-  .badge-bronze { background: #CD7F32; }
+    .restaurant-card {
+        position: relative;
+        overflow: visible;
+    }
 
-  /* Tooltip */
-  .tooltip {
-    position: absolute;
-    top: -36px;
-    right: 0;
-    background: #000;
-    color: #fff;
-    padding: 6px 10px;
-    font-size: 11px;
-    border-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
-    white-space: nowrap;
-    transition: all 0.2s ease;
-    z-index: 999;
-  }
+    .badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        display: inline-flex;
+        align-items: center;
+        padding: 6px;
+        border-radius: 50%;
+        z-index: 40;
+    }
 
-  .badge:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-4px);
-  }
+    .badge svg {
+        width: 20px;
+        height: 20px;
+    }
 
-  /* Card fix (important) */
-  .restaurant-card {
-    overflow: visible !important;
-    position: relative;
-  }
+    .badge-gold {
+        background: #FFF6D3;
+        color: #B8860B;
+        border: 1px solid #e8c878;
+    }
+
+    .badge-silver {
+        background: #F0F0F5;
+        color: #6B7280;
+        border: 1px solid #d4d4d8;
+    }
+
+    .badge-bronze {
+        background: #F3E4D3;
+        color: #A97142;
+        border: 1px solid #d1b08a;
+    }
 </style>
 
 <!-- ================= Restaurants Hero Section ================= -->
 <section class="bg-orange-50 py-16">
-  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <p class="text-primary text-sm mb-2">Pure Vegetarian & Sattvik Dining</p>
-
-    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-      Agra – No Onion No Garlic Restaurants
-    </h1>
-
-    <p class="text-gray-600 mb-4 max-w-2xl mx-auto">
-      Handpicked list of best Sattvik NO ONION NO GARLIC restaurants in Agra.
-    </p>
-  </div>
+    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-primary text-sm mb-2">Pure Vegetarian & Sattvik Dining</p>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+            Agra – No Onion No Garlic Restaurants
+        </h1>
+        <p class="text-gray-600 mb-4 max-w-2xl mx-auto">
+            Handpicked list of best Sattvik NO ONION NO GARLIC restaurants in Agra.
+        </p>
+    </div>
 </section>
 
 <!-- ================= Agra Restaurants ================= -->
 <section class="bg-white py-16">
-  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Restaurant 1 — GOLD -->
-      <div class="restaurant-card bg-orange-50 rounded-lg shadow-lg hover:shadow-xl transition">
+            <!-- Restaurant Card — GOLD -->
+            <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative"
+                data-city="agra">
+                <div class="badge badge-gold">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z" />
+                    </svg>
+                </div>
+                <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80"
+                    alt="Govinda's Pure Veg" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Govinda's Pure Veg</h3>
+                    <p class="text-gray-600 mb-3">Near Taj Mahal, Agra</p>
+                    <div class="flex items-center gap-2 text-green-700 font-semibold mb-3">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                            <path
+                                d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z" />
+                        </svg>
+                        Verified by Inspection
+                    </div>
+                    <div class="flex items-center text-yellow-500 mb-4">
+                        <span class="material-icons-outlined text-base">star</span>
+                        <span class="material-icons-outlined text-base">star</span>
+                        <span class="material-icons-outlined text-base">star</span>
+                        <span class="material-icons-outlined text-base">star_half</span>
+                        <span class="material-icons-outlined text-base text-gray-300">star</span>
+                    </div>
+                    <a href="/restaurant-details"
+                        class="inline-flex items-center gap-1 text-primary font-semibold hover:underline">
+                        View Details <span class="material-icons-outlined text-base">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
 
-        <div class="badge badge-gold">
-          <div class="tooltip">Verified by Inspection</div>
+            <!-- Restaurant Card — SILVER -->
+            <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative"
+                data-city="agra">
+                <div class="badge badge-silver">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z" />
+                    </svg>
+                </div>
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
+                    alt="Sattvik Bhojan" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Sattvik Bhojan</h3>
+                    <p class="text-gray-600 mb-3">Agra Cantt, Agra</p>
+                    <div class="flex items-center gap-2 text-green-700 font-semibold mb-3">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                            <path
+                                d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z" />
+                        </svg>
+                        Verified by Visiting
+                    </div>
+                    <div class="flex items-center text-yellow-500 mb-4">
+                        <span class="material-icons-outlined text-base">star</span>
+                        <span class="material-icons-outlined text-base">star</span>
+                        <span class="material-icons-outlined text-base">star</span>
+                        <span class="material-icons-outlined text-base">star</span>
+                        <span class="material-icons-outlined text-base text-gray-300">star</span>
+                    </div>
+                    <a href="/restaurant-details"
+                        class="inline-flex items-center gap-1 text-primary font-semibold hover:underline">
+                        View Details <span class="material-icons-outlined text-base">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
 
-          <!-- Shield + Check SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="white" viewBox="0 0 24 24">
-            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15l-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z"/>
-          </svg>
-          Gold
+            <!-- Restaurant Card — BRONZE -->
+            <div class="restaurant-card bg-orange-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition relative"
+                data-city="agra">
+                <div class="badge badge-bronze">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z" />
+                    </svg>
+                </div>
+                <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80"
+                    alt="Shuddh Rasoi" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Shuddh Rasoi</h3>
+                    <p class="text-gray-600 mb-3">Fatehabad Road, Agra</p>
+                    <div class="flex items-center gap-2 text-green-700 font-semibold mb-3">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                            <path
+                                d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z" />
+                        </svg>
+                        Verified by Phone
+                    </div>
+                    <div class="flex items-center text-yellow-500 mb-4">
+                        <span class="material-icons-outlined text-base">star</span>
+                        <span class="material-icons-outlined text-base">star</span>
+                        <span class="material-icons-outlined text-base">star_half</span>
+                        <span class="material-icons-outlined text-base text-gray-300">star</span>
+                        <span class="material-icons-outlined text-base text-gray-300">star</span>
+                    </div>
+                    <a href="/restaurant-details"
+                        class="inline-flex items-center gap-1 text-primary font-semibold hover:underline">
+                        View Details <span class="material-icons-outlined text-base">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
-
-        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80" 
-             alt="Prem Prasad" class="w-full h-48 object-cover">
-
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Prem Prasad</h3>
-          <p class="text-gray-600 mb-3">Agra, Uttar Pradesh</p>
-
-          <div class="flex items-center text-yellow-500 mb-4">
-            <span class="material-icons-outlined text-base">star</span>
-            <span class="material-icons-outlined text-base">star</span>
-            <span class="material-icons-outlined text-base">star</span>
-            <span class="material-icons-outlined text-base">star</span>
-            <span class="material-icons-outlined text-base">star_half</span>
-          </div>
-
-          <a href="/restaurant-details" class="inline-flex items-center gap-1 text-primary font-semibold hover:underline">
-            View Details <span class="material-icons-outlined text-base">arrow_forward</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Restaurant 2 — SILVER -->
-      <div class="restaurant-card bg-orange-50 rounded-lg shadow-lg hover:shadow-xl transition">
-
-        <div class="badge badge-silver">
-          <div class="tooltip">Verified by Visiting</div>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="white" viewBox="0 0 24 24">
-            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15l-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z"/>
-          </svg>
-          Silver
-        </div>
-
-        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" 
-             alt="Agra Satvik Kitchen" class="w-full h-48 object-cover">
-
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Agra Satvik Kitchen</h3>
-          <p class="text-gray-600 mb-3">Agra, Uttar Pradesh</p>
-
-          <div class="flex items-center text-yellow-500 mb-4">
-            <span class="material-icons-outlined">star</span>
-            <span class="material-icons-outlined">star</span>
-            <span class="material-icons-outlined">star</span>
-            <span class="material-icons-outlined text-gray-300">star</span>
-            <span class="material-icons-outlined text-gray-300">star</span>
-          </div>
-
-          <a href="/restaurant-details" class="inline-flex items-center gap-1 text-primary font-semibold hover:underline">
-            View Details <span class="material-icons-outlined">arrow_forward</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Restaurant 3 — BRONZE -->
-      <div class="restaurant-card bg-orange-50 rounded-lg shadow-lg hover:shadow-xl transition">
-
-        <div class="badge badge-bronze">
-          <div class="tooltip">Verified by Phone</div>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="white" viewBox="0 0 24 24">
-            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15l-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z"/>
-          </svg>
-          Bronze
-        </div>
-
-        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80" 
-             alt="Prasadam Bhojanalaya" class="w-full h-48 object-cover">
-
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Prasadam Bhojanalaya</h3>
-          <p class="text-gray-600 mb-3">Agra, Uttar Pradesh</p>
-
-          <div class="flex items-center text-yellow-500 mb-4">
-            <span class="material-icons-outlined">star</span>
-            <span class="material-icons-outlined">star</span>
-            <span class="material-icons-outlined">star_half</span>
-            <span class="material-icons-outlined text-gray-300">star</span>
-            <span class="material-icons-outlined text-gray-300">star</span>
-          </div>
-
-          <a href="/restaurant-details" class="inline-flex items-center gap-1 text-primary font-semibold hover:underline">
-            View Details <span class="material-icons-outlined">arrow_forward</span>
-          </a>
-        </div>
-      </div>
-
     </div>
-  </div>
 </section>
