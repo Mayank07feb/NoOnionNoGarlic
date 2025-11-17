@@ -1,5 +1,3 @@
-<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-
 <style>
   .hero-container {
     position: relative;
@@ -8,18 +6,43 @@
     background-image: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&h=900&fit=crop');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     overflow: visible;
   }
 
+  /* Cinematic dark overlay with vignette */
   .cinematic-overlay {
-    background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%),
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+    background:
+      radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
   }
 
-  .fade-in { animation: fadeIn 1.2s ease-out backwards; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  /* Minimal fade in */
+  .fade-in {
+    animation: fadeIn 1.2s ease-out backwards;
+  }
 
-  .elegant-underline { position: relative; display: inline-block; }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+
+  /* Elegant underline effect */
+  .elegant-underline {
+    position: relative;
+    display: inline-block;
+  }
+
   .elegant-underline::after {
     content: '';
     position: absolute;
@@ -31,149 +54,250 @@
     background: linear-gradient(90deg, transparent, #FFD700, transparent);
     animation: expandLine 1.5s ease-out 0.5s forwards;
   }
-  @keyframes expandLine { to { width: 100%; } }
 
+  @keyframes expandLine {
+    to {
+      width: 100%;
+    }
+  }
+
+  /* Ultra-modern frosted card */
   .frosted-card {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(25px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
+  /* Search wrapper positioning */
+  .search-wrapper {
+    position: relative;
+  }
+
+  /* Smooth input transition */
   .sleek-input {
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.4s ease;
-    z-index: 5000;
-    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+
   .sleek-input:focus {
     background: rgba(255, 255, 255, 1);
     border-color: rgba(255, 215, 0, 0.6);
     transform: translateY(-2px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    outline: none;
   }
 
-  /* Dropdown UI */
+  /* Dropdown suggestions */
   .suggestions-dropdown {
     position: absolute;
-    top: calc(100% + 8px);
+    top: 100%;
     left: 0;
-    width: 350px;
-    background: #fff;
+    right: 0;
+    margin-top: 8px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    display: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
     z-index: 9999;
+
+    /* NEW FIX — LEFT ALIGN ALL TEXT */
     text-align: left !important;
   }
 
-  .suggestions-dropdown.active { display: block; }
-
-  .category-item {
-    padding: 16px 20px;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* arrows right */
-    gap: 12px;
-    position: relative;
-    background: transparent;
+  .suggestions-dropdown.active {
+    max-height: 350px;
+    opacity: 1;
   }
-  .category-item.open { background: rgba(255, 215, 0, 0.06); }
 
-  .subcategory-dropdown {
-    position: absolute;
-    left: 100%;
-    top: 0;
-    margin-left: 8px;
-    width: 320px;
-    background: white;
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    display: none;
-    z-index: 10000;
-  }
-  .subcategory-dropdown.open { display: block; }
-
-  .subcategory-item {
-    padding: 14px 18px;
+  .suggestion-item {
+    padding: 12px 16px;
     cursor: pointer;
+    transition: all 0.2s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
-    justify-content: space-between; /* arrows right */
     align-items: center;
+    gap: 12px;
+
+    /* NEW FIX — LEFT ALIGN */
+    text-align: left !important;
+    justify-content: flex-start;
+  }
+
+  /* Also force text inside the inner div to align left */
+  .suggestion-item div {
+    text-align: left !important;
+  }
+
+  .suggestion-item:last-child {
+    border-bottom: none;
+  }
+
+  .suggestion-item:hover {
+    background: rgba(255, 215, 0, 0.15);
+    padding-left: 20px;
+  }
+
+  .suggestion-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  /* Premium button design */
+  .premium-btn {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
-    background: transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   }
-  .subcategory-item.open { background: rgba(255, 215, 0, 0.06); }
 
-  .details-panel {
+  .premium-btn::before {
+    content: '';
     position: absolute;
-    left: 100%;
-    top: 0;
-    margin-left: 8px;
-    width: 350px;
-    max-height: 400px;
-    overflow-y: auto;
-    background: #fff;
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    display: none;
-    z-index: 10001;
-  }
-  .details-panel.open { display: block; }
-
-  .details-section { padding: 12px 16px; text-align: left; }
-  .details-header {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #666;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-    padding-bottom: 5px;
+    inset: 0;
+    border-radius: 0.75rem;
+    padding: 2px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
-  .detail-item {
-    padding: 10px 12px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    background: rgba(255, 215, 0, 0.08);
+  .premium-btn:hover::before {
+    opacity: 1;
   }
-  .detail-item:hover { background: rgba(255, 215, 0, 0.18); }
 
-  .detail-item a { display:flex; gap:10px; text-decoration:none; color:black; font-weight:500; }
+  .premium-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  }
 
-  .premium-btn { background: black; color: white; padding: 14px 24px; border-radius: 12px; }
+  /* Particle effect */
+  .particle-bg::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow:
+      100px 200px 0 rgba(255, 255, 255, 0.2),
+      300px 100px 0 rgba(255, 255, 255, 0.3),
+      500px 300px 0 rgba(255, 255, 255, 0.2),
+      700px 150px 0 rgba(255, 255, 255, 0.3),
+      900px 250px 0 rgba(255, 255, 255, 0.2),
+      200px 400px 0 rgba(255, 255, 255, 0.3),
+      600px 450px 0 rgba(255, 255, 255, 0.2),
+      800px 350px 0 rgba(255, 255, 255, 0.3);
+    animation: sparkle 3s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
 </style>
 
-<div class="hero-container">
+
+<!-- ================= Cinematic Hero Section ================= -->
+<div class="hero-container particle-bg">
   <div class="absolute inset-0 cinematic-overlay"></div>
 
   <div class="absolute inset-0 flex items-center justify-center z-10 px-4">
-    <div class="max-w-5xl w-full text-center">
-      <h1 class="text-white font-bold mb-10">
-        <span class="block text-gray-300 text-sm md:text-xl uppercase tracking-[0.3em] fade-in delay-100">Find Your Favourite</span>
-        <span class="block text-3xl md:text-6xl font-black elegant-underline fade-in delay-200">No Onion No Garlic</span>
-        <span class="block text-gray-300 text-sm md:text-xl uppercase tracking-[0.3em] fade-in delay-300 mt-4">Products and Recipes</span>
+    <div class="text-center max-w-5xl w-full">
+
+      <h1 class="text-white font-montserrat font-bold mb-12">
+        <span class="text-sm md:text-xl lg:text-2xl block fade-in delay-100 uppercase tracking-[0.3em] font-light text-gray-300">Find Your Favourite</span>
+        <span class="text-3xl md:text-6xl lg:text-7xl block my-6 fade-in delay-200 elegant-underline font-black">No Onion No Garlic</span>
+        <span class="text-sm md:text-xl lg:text-2xl block fade-in delay-300 uppercase tracking-[0.3em] font-light text-gray-300">Products and Recipes</span>
       </h1>
 
-      <div class="frosted-card p-6 rounded-2xl">
-        <div class="flex gap-4 items-stretch search-wrapper" style="position:relative;">
-          <div class="relative flex-1" style="z-index:9999;">
-            <input id="searchInput" placeholder="Search categories..." class="sleek-input w-full px-6 py-4 rounded-xl text-gray-800" />
-            <div id="suggestionsDropdown" class="suggestions-dropdown" aria-hidden="true"></div>
+      <div class="frosted-card rounded-2xl p-5 md:p-7 w-full fade-in delay-300">
+        <div class="flex flex-col md:flex-row gap-3 items-stretch">
+
+          <!-- Search Input -->
+          <div class="search-wrapper flex-1 w-full">
+            <input type="text" id="searchInput"
+              placeholder="Search for recipes, products, etc."
+              class="sleek-input w-full px-6 py-4 rounded-xl focus:outline-none font-open-sans text-base text-gray-800 placeholder-gray-500"
+              autocomplete="off">
+
+            <div id="suggestionsDropdown" class="suggestions-dropdown">
+              <div class="suggestion-item" data-value="Noodles">
+                <span class="suggestion-icon">🍜</span>
+                <div>
+                  <div class="font-semibold text-gray-800">Noodles</div>
+                  <div class="text-xs text-gray-500">Browse all noodle varieties</div>
+                </div>
+              </div>
+
+              <div class="suggestion-item" data-value="Recipes">
+                <span class="suggestion-icon">🍲</span>
+                <div>
+                  <div class="font-semibold text-gray-800">Recipes</div>
+                  <div class="text-xs text-gray-500">Discover delicious recipes</div>
+                </div>
+              </div>
+
+              <div class="suggestion-item" data-value="Products">
+                <span class="suggestion-icon">🥫</span>
+                <div>
+                  <div class="font-semibold text-gray-800">Products</div>
+                  <div class="text-xs text-gray-500">Explore our product range</div>
+                </div>
+              </div>
+
+              <div class="suggestion-item" data-value="Grains">
+                <span class="suggestion-icon">🌾</span>
+                <div>
+                  <div class="font-semibold text-gray-800">Grains</div>
+                  <div class="text-xs text-gray-500">Find healthy grain options</div>
+                </div>
+              </div>
+
+              <div class="suggestion-item" data-value="Snacks">
+                <span class="suggestion-icon">🥗</span>
+                <div>
+                  <div class="font-semibold text-gray-800">Snacks</div>
+                  <div class="text-xs text-gray-500">Quick and tasty snacks</div>
+                </div>
+              </div>
+
+              <div class="suggestion-item" data-value="Curries">
+                <span class="suggestion-icon">🍛</span>
+                <div>
+                  <div class="font-semibold text-gray-800">Curries</div>
+                  <div class="text-xs text-gray-500">Authentic curry recipes</div>
+                </div>
+              </div>
+
+            </div>
           </div>
 
-          <button id="searchButton" class="premium-btn flex items-center gap-2">
-            <span class="material-icons-outlined">search</span> Search
+          <!-- Button -->
+          <button class="premium-btn w-full md:w-auto text-white font-semibold px-8 py-4 rounded-xl flex items-center justify-center gap-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <span>Search</span>
           </button>
+
         </div>
       </div>
 
@@ -181,265 +305,37 @@
   </div>
 </div>
 
+
 <script>
-/* ---------- DATA ---------- */
-const data = {
-  "Breakfast And Brunch": {
-    icon: "restaurant_menu",
-    subcategories: {
-      "Aloo Tikki": {
-        products: [
-          { name: "Frozen Aloo Tikki Pack", url: "#" },
-          { name: "Ready-to-Fry Aloo Tikki", url: "#" }
-        ],
-        recipes: [
-          { name: "Aloo Tikki Recipe Video", url: "https://www.youtube.com/watch?v=xN00xQOgd-Y" }
-        ]
-      },
-      "Cheese Balls": {
-        products: [
-          { name: "Cheese Garlic Puffs", url: "#" }
-        ],
-        recipes: [
-          { name: "Homemade Cheese Balls", url: "#" }
-        ]
-      }
-    }
-  },
+  const searchInput = document.getElementById('searchInput');
+  const suggestionsDropdown = document.getElementById('suggestionsDropdown');
+  const suggestionItems = document.querySelectorAll('.suggestion-item');
 
-  "Starters And Appetizers": {
-    icon: "lunch_dining",
-    subcategories: {
-      "Paneer Tikka": {
-        products: [{ name: "Paneer Tikka Mix", url: "#" }],
-        recipes: [{ name: "Restaurant Style Paneer", url: "#" }]
-      }
-    }
-  }
-};
-
-/* ---------- ELEMENTS & TIMERS ---------- */
-const dropdown = document.getElementById('suggestionsDropdown');
-const input = document.getElementById('searchInput');
-const btn = document.getElementById('searchButton');
-
-let globalHideTimer = null;
-const HIDE_DELAY = 800; // ms before closing when mouse leaves entire dropdown
-
-/* Utility to clear global hide timer */
-function clearGlobalTimer() {
-  if (globalHideTimer) { clearTimeout(globalHideTimer); globalHideTimer = null; }
-}
-
-/* ---------- RENDER ---------- */
-function render(filter = '') {
-  dropdown.innerHTML = '';
-  dropdown.setAttribute('aria-hidden', 'false');
-
-  Object.keys(data).forEach(cat => {
-    if (filter && !cat.toLowerCase().includes(filter.toLowerCase())) return;
-
-    const catObj = data[cat];
-    const catEl = document.createElement('div');
-    catEl.className = 'category-item';
-    catEl.innerHTML = `
-      <div style="display:flex;align-items:center;gap:10px;">
-        <span class="material-icons-outlined">${catObj.icon}</span>
-        <strong style="text-align:left;">${cat}</strong>
-      </div>
-      <span class="material-icons-outlined">chevron_right</span>
-    `;
-
-    const subMenu = document.createElement('div');
-    subMenu.className = 'subcategory-dropdown';
-
-    /* per-submenu hide timer */
-    let subHideTimer = null;
-
-    Object.keys(catObj.subcategories).forEach(sub => {
-      const subObj = catObj.subcategories[sub];
-      const subEl = document.createElement('div');
-      subEl.className = 'subcategory-item';
-      subEl.innerHTML = `
-        <span style="flex:1;text-align:left;">${sub}</span>
-        <span class="material-icons-outlined">chevron_right</span>
-      `;
-
-      const details = document.createElement('div');
-      details.className = 'details-panel';
-
-      // Build details content
-      if (subObj.products?.length) {
-        const html = `
-          <div class="details-section">
-            <div class="details-header">Products</div>
-            ${subObj.products.map(p => `
-              <div class="detail-item"><a href="${p.url}" target="_blank"><span class="material-icons-outlined">shopping_bag</span>${p.name}</a></div>
-            `).join('')}
-          </div>
-        `;
-        details.innerHTML += html;
-      }
-      if (subObj.recipes?.length) {
-        const html = `
-          <div class="details-section">
-            <div class="details-header">Recipes</div>
-            ${subObj.recipes.map(r => `
-              <div class="detail-item"><a href="${r.url}" target="_blank"><span class="material-icons-outlined">menu_book</span>${r.name}</a></div>
-            `).join('')}
-          </div>
-        `;
-        details.innerHTML += html;
-      }
-
-      /* --- Sub element mouse handling (keeps panels open while moving) --- */
-      subEl.addEventListener('mouseenter', () => {
-        // cancel hiding timers
-        clearGlobalTimer();
-        if (subHideTimer) { clearTimeout(subHideTimer); subHideTimer = null; }
-        // open this sub and details
-        subEl.classList.add('open');
-        subMenu.classList.add('open');
-        details.classList.add('open');
-      });
-
-      subEl.addEventListener('mouseleave', (e) => {
-        // start timer to remove open styles unless entering details
-        subHideTimer = setTimeout(() => {
-          subEl.classList.remove('open');
-          details.classList.remove('open');
-          // if mouse left submenu entirely, may hide subMenu after short delay
-        }, 200);
-      });
-
-      // ensure details itself keeps open while hovered
-      details.addEventListener('mouseenter', () => {
-        clearGlobalTimer();
-        if (subHideTimer) { clearTimeout(subHideTimer); subHideTimer = null; }
-        subEl.classList.add('open');
-        details.classList.add('open');
-      });
-      details.addEventListener('mouseleave', () => {
-        subHideTimer = setTimeout(() => {
-          subEl.classList.remove('open');
-          details.classList.remove('open');
-        }, 200);
-      });
-
-      subEl.appendChild(details);
-      subMenu.appendChild(subEl);
-    });
-
-    /* --- Category hover behavior (open subMenu) --- */
-    catEl.addEventListener('mouseenter', () => {
-      clearGlobalTimer();
-      catEl.classList.add('open');
-      subMenu.classList.add('open');
-      // ensure dropdown stays visible
-      dropdown.classList.add('active');
-    });
-
-    catEl.addEventListener('mouseleave', () => {
-      // small delay to allow entering submenu or details
-      setTimeout(() => {
-        // if pointer not inside submenu or details, close this cat
-        const hovered = document.querySelector(':hover');
-        // if the hover chain doesn't include subMenu or details, close cat
-        if (!Array.from(hovered || []).some(el => el && (el === subMenu || subMenu.contains(el)))) {
-          catEl.classList.remove('open');
-          // keep subMenu open state removal handled by sub timers
-        }
-      }, 150);
-    });
-
-    /* ensure subMenu itself cancels global hide if hovered */
-    subMenu.addEventListener('mouseenter', () => {
-      clearGlobalTimer();
-      subMenu.classList.add('open');
-    });
-    subMenu.addEventListener('mouseleave', () => {
-      // small delay: close subMenu unless pointer moved to details or category
-      setTimeout(() => {
-        const hovered = document.querySelector(':hover');
-        if (!hovered || (!subMenu.contains(hovered) && !catEl.contains(hovered))) {
-          subMenu.classList.remove('open');
-        }
-      }, 200);
-    });
-
-    catEl.appendChild(subMenu);
-    dropdown.appendChild(catEl);
+  searchInput.addEventListener('focus', () => {
+    suggestionsDropdown.classList.add('active');
   });
 
-  /* attach top-level hover handlers to dropdown to control global hide timer */
-  dropdown.addEventListener('mouseenter', () => clearGlobalTimer());
-  dropdown.addEventListener('mouseleave', () => {
-    clearGlobalTimer();
-    globalHideTimer = setTimeout(() => {
-      dropdown.classList.remove('active');
-      // clear all open classes
-      dropdown.querySelectorAll('.open').forEach(n => n.classList.remove('open'));
-    }, HIDE_DELAY);
-  });
-}
-
-/* ---------- UI hooks ---------- */
-btn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  clearGlobalTimer();
-  if (!dropdown.classList.contains('active')) {
-    render();
-    dropdown.classList.add('active');
-  } else {
-    dropdown.classList.remove('active');
-  }
-});
-
-/* live filtering while typing */
-input.addEventListener('input', (e) => {
-  const v = e.target.value || '';
-  if (!dropdown.classList.contains('active')) {
-    render(v);
-    dropdown.classList.add('active');
-  } else {
-    render(v);
-  }
-});
-
-/* clicking outside closes menu (but not immediate while inside dropdown) */
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.search-wrapper') && !e.target.closest('.premium-btn')) {
-    // start hide timer immediately
-    clearGlobalTimer();
-    globalHideTimer = setTimeout(() => {
-      dropdown.classList.remove('active');
-      dropdown.querySelectorAll('.open').forEach(n => n.classList.remove('open'));
-    }, 100); // short delay on outside click
-  }
-});
-
-/* ensure keyboard focus keeps dropdown open */
-input.addEventListener('focus', () => {
-  clearGlobalTimer();
-  if (!dropdown.classList.contains('active')) {
-    render();
-    dropdown.classList.add('active');
-  }
-});
-input.addEventListener('blur', () => {
-  // small delay to allow focus to move to menu if user tabs there
-  clearGlobalTimer();
-  globalHideTimer = setTimeout(() => {
-    if (!document.activeElement || !dropdown.contains(document.activeElement)) {
-      dropdown.classList.remove('active');
-      dropdown.querySelectorAll('.open').forEach(n => n.classList.remove('open'));
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-wrapper')) {
+      suggestionsDropdown.classList.remove('active');
     }
-  }, 300);
-});
+  });
+
+  searchInput.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase();
+    suggestionItems.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(value) ? 'flex' : 'none';
+    });
+  });
+
+  suggestionItems.forEach(item => {
+    item.addEventListener('click', () => {
+      searchInput.value = item.dataset.value;
+      suggestionsDropdown.classList.remove('active');
+    });
+  });
 </script>
-
-
-
 
 
 
