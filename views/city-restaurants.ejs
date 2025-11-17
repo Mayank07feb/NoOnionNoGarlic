@@ -40,6 +40,37 @@
         color: #A97142;
         border: 1px solid #d1b08a;
     }
+
+    .badge-tooltip {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-8px);
+        background: #1F2937;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+        z-index: 50;
+    }
+
+    .badge-tooltip::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-top-color: #1F2937;
+    }
+
+    .badge:hover .badge-tooltip {
+        opacity: 1;
+    }
 </style>
 
 <!-- ================= Restaurants Hero Section ================= -->
@@ -68,6 +99,7 @@
                         <path
                             d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z" />
                     </svg>
+                    <div class="badge-tooltip">Gold - Verified by Inspection</div>
                 </div>
                 <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80"
                     alt="Govinda's Pure Veg" class="w-full h-48 object-cover">
@@ -103,6 +135,7 @@
                         <path
                             d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z" />
                     </svg>
+                    <div class="badge-tooltip">Silver - Verified by Visiting</div>
                 </div>
                 <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
                     alt="Sattvik Bhojan" class="w-full h-48 object-cover">
@@ -138,6 +171,7 @@
                         <path
                             d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4zm-1 14l-3.5-3.5 1.41-1.41L11 12.17l5.09-5.09 1.41 1.41L11 16z" />
                     </svg>
+                    <div class="badge-tooltip">Bronze - Verified by Phone</div>
                 </div>
                 <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80"
                     alt="Shuddh Rasoi" class="w-full h-48 object-cover">
